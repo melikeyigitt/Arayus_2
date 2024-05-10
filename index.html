@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="./logo.png" alt="PLAT_X Logo" id="logo" onclick="reset()">
+    </header>
+
+    <div id="main-container">
+
+        <div id="balonlar-harita">
+            <img src="ADS_asama1_1.png" alt="balonlar img" id="balon-img">
+        </div>
+
+        <div id="gorev-paneli">
+            <h1>Gorev Paneli</h1>
+            <table>
+                <tr>
+                    <th>Index</th>
+                    <th>Sinif</th>
+                    <th>Renk</th>
+                    <th>Tip</th>
+                    <th>Uzaklik</th>
+                    <th>Merkez</th>
+                    <th>Durum</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Büyük</td>
+                    <td>Kırmızı</td>
+                    <td>Tanımsız</td>
+                    <td>10</td>
+                    <td>240, 260</td>
+                    <td>Canlı</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Kucuk</td>
+                    <td>Kırmızı</td>
+                    <td>Tanımsız</td>
+                    <td>10.2</td>
+                    <td>300, 380</td>
+                    <td>Canlı</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Orta</td>
+                    <td>Kırmızı</td>
+                    <td>Tanımsız</td>
+                    <td>10.25</td>
+                    <td>680, 380</td>
+                    <td>Canlı</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div id="middle-container">
+
+        <div id="asama-1">
+            <h3>Asama-1</h3>
+            <br>
+            <label for="hedef-balon">Hedef Balon:</label>
+            <input type="text" id="hedef-balon" placeholder="Imha Edilecek Balon">
+            <button class="button-asama-1" onclick="imhaEt()">IMHA ET</button>
+        </div>
+        <div id="asama-2">
+            <h3>Asama-2</h3>
+            <br>
+            <label for="izlenecek-balon">Izlenecek Balon:</label>
+            <input type="text" id="izlenecek-balon" placeholder="Balon Indeksi">
+            <button class="button-asama-2" onclick="izle()">IZLE</button>
+            <button class="button-asama-2" onclick="imhaEt()">IMHA ET</button>
+        </div>
+        <div id="asama-3">
+            <h3>Asama-3</h3>
+            <br>
+            <button class="button-asama-3" onclick="tamOtonomImha()">TAM Otonom Imhaya Basla</button>
+
+        </div>
+        <div id="konum">
+            <br>
+            <div id="arrow" class="arrow up" role="button" tabindex="0">↑</div>
+            <br>
+            <div id="left" class="arrow left" role="button" tabindex="0">←</div>
+            <br>
+            <div id="right" class="arrow right" role="button" tabindex="0">→</div>
+            <br>
+            <div id="backward" class="arrow down" role="button" tabindex="0">↓</div>
+            <br>
+            <div id="batarya">Batarya Durum:</div>
+            <div id="muhimmat">Muhimmat Durum:</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table {
+    width: 90%; /* Makes each table use the full width of its container */
+    border-collapse: collapse; /* Ensures that borders between cells are merged */
+    margin-bottom: 20px; /* Adds space between tables */
+    border: black 0.2rem solid;
+}
+th, td {
+    border: 1px solid black; /* Adds a light grey border around each cell */
+    padding: 8px; /* Adds space inside each cell */
+    text-align: left; /* Aligns text to the left */
+}
+
+th{
+    background-color: #6a6a6a;
+}
+
+h1{
+    margin-bottom: 5px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6a6a6a;
+    gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#logo {
+    max-height: 3.5rem;
+}
+#main-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr) ;
+    margin-right:20px;
+    margin-top: 10px;
+}
+#balon-img{
+    width: 100%;
+}
+#gorev-paneli{
+    margin-left: 30px;
+}
+#middle-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+#asama-1, #asama-2{
+    display: grid;
+    grid-template-areas:
+        'h3 h3'
+        'label input'
+        'button button';
+    margin: 10px;
+    padding: 8px;
+    gap: 5px;
+    border: solid 0.2rem black;
+}
+#asama-3{
+    align-content: center;
+    margin: 10px;
+    padding: 8px;
+    gap: 5px;
+    border: solid 0.2rem black;
+}
+#konum{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin: 10px;
+    padding: 8px;
+    gap: 5px;
+    border: solid 0.2rem black;
+}
+.arrow{
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
+}
