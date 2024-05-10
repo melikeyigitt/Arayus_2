@@ -44,7 +44,7 @@ header {
     margin-top: 10px;
 }
 #balon-img{
-    width: 100%;
+    width: 90%;
 }
 #gorev-paneli{
     margin-left: 30px;
@@ -53,7 +53,7 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
-#asama-1, #asama-2{
+#asama-1, #asama-2, #asama-3{
     display: grid;
     grid-template-areas:
         'h3 h3'
@@ -64,13 +64,7 @@ header {
     gap: 5px;
     border: solid 0.2rem black;
 }
-#asama-3{
-    align-content: center;
-    margin: 10px;
-    padding: 8px;
-    gap: 5px;
-    border: solid 0.2rem black;
-}
+
 #konum{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
