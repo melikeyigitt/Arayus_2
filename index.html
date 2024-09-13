@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="roslib.js"></script>
+    <script src="rosbridge.js"></script>
 </head>
 
 <body>
@@ -11,8 +13,11 @@
     <header>
         <img src="./logo.png" alt="PLAT_X Logo" id="logo" onclick="reset()">
     </header>
+    <div id="status" class="connecting">Connecting...</div>
+
 
     <div id="main-container">
+
 
         <div id="balonlar-harita">
             <img src="ADS_asama1_1.png" alt="balonlar img" id="balon-img">
@@ -100,6 +105,57 @@
         </div>
 
     </div>
+    <script>
+        // Initialize connection to ROS
+        var ros = new ROSLIB.Ros({
+            url : 'ws://localhost:9090'  // replace with your ROS bridge URL if different
+        });
 
+        // CONNECTION WITH ROS, CHECKING
+        ros.on('connection', function() {
+            console.log('Connected to websocket server.');
+            document.getElementById('status').className = 'connected';
+            document.getElementById('status').innerHTML = 'Connected';
+
+        });
+
+        ros.on('error', function(error) {
+            console.log('Error connecting to websocket server: ', error);
+            document.getElementById('status').className = 'error';
+            document.getElementById('status').innerHTML = 'Error';
+        });
+
+        ros.on('close', function() {
+            console.log('Connection to websocket server closed.');
+            document.getElementById('status').className = 'closed';
+            document.getElementById('status').innerHTML = 'Closed';
+        });
+
+    /*
+
+        // Function to display video stream from a ROS topic
+        function setupVideoStream() {
+            // Create a ROS topic subscriber for the video stream (assuming the topic is '/camera/image_raw')
+            var imageTopic = new ROSLIB.Topic({
+                ros: ros,
+                name: '/camera/image_raw',  // Replace with your actual video topic name
+                messageType: 'sensor_msgs/CompressedImage'  // Image message type (could also be 'sensor_msgs/Image')
+            });
+
+            // Subscribe to the video topic and update the image element when a new frame is received
+            imageTopic.subscribe(function(message) {
+                // Assuming the message contains compressed image data (base64 encoded)
+                var imgElement = document.getElementById('balon-img');
+                imgElement.src = "data:image/jpeg;base64," + message.data;
+            });
+        }
+
+        window.onload = function() {
+            setupVideoStream();  // Initialize the video stream once the page is ready
+        };
+
+
+     */
+    </script>
 </body>
 </html>
